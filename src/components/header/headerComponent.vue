@@ -1,7 +1,5 @@
 <script setup>
-import { catDoStuff } from "@/assets/js/buttons";
-
-let catdostuff = new catDoStuff();
+import { goto } from "@/assets/js/buttons";
 </script>
 
 <template>
@@ -24,6 +22,14 @@ let catdostuff = new catDoStuff();
             alt="sena-logo"
         />
     </div>
+
+    <div class="header-info">
+        <p class="title">DESARROLLO DE VIDEOJUEGOS Y ENTORNOS INTERACTIVOS</p>
+        <div class="subtitle">
+            <p>Nivel de formación: Tecnólogo</p>
+        </div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-links">
             <ul>
@@ -32,46 +38,20 @@ let catdostuff = new catDoStuff();
                 </li>
                 <hr />
                 <li>
-                    <a
-                        href="https://comunidades.netlab-sena.net/cursos-cortos"
-                        target="_blank"
-                        >Cursos cortos</a
-                    >
+                    <button type="button" v-on:click="goto.agenda">
+                        temario
+                    </button>
                 </li>
                 <hr />
                 <li>
-                    <a href="https://zajuna.sena.edu.co/bilinguismo.php">
-                        Bilingüismo
-                    </a>
+                    <button type="button" v-on:click="goto.skills">
+                        Competencias a desarrollar
+                    </button>
                 </li>
                 <hr />
                 <li>
-                    <a href="https://zajuna.sena.edu.co/titulada.php"
-                        >Titulada</a
-                    >
+                    <button type="button" v-on:click="goto.instructor">Acerca del instructor</button>
                 </li>
-                <hr />
-                <li>
-                    <a
-                        href="https://comunidades.netlab-sena.net/comunidad-aprendices"
-                        >Comunidad aprendices</a
-                    >
-                </li>
-                <hr />
-                <li>
-                    <a
-                        href="https://comunidades.netlab-sena.net/comunidad-instructores"
-                        >Comunidad instructores</a
-                    >
-                </li>
-                <hr />
-                <li>
-                    <a href="https://zajuna.sena.edu.co/campesena.php"
-                        >Comunidad campesina</a
-                    >
-                </li>
-                <hr />
-                <li><button v-on:click="catdostuff.mew">😺</button></li>
             </ul>
         </div>
     </nav>

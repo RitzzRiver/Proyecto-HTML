@@ -2,40 +2,20 @@
 import headerComponent from "../components/header/headerComponent.vue";
 
 import bannerComponent from "@/components/main/bannerComponent.vue";
-import navbuttonsComponent from "@/components/main/navbuttonsComponent.vue";
-import justificationComponent from "@/components/main/justificationComponent.vue";
-
-import tableComponent from "@/components/tableComponent.vue";
-import detailsComponent from "@/components/detailsComponent.vue";
-import formComponent from "@/components/formComponent.vue";
+import tableComponent from "@/components/main/tableComponent.vue";
+import detailsComponent from "@/components/main/detailsComponent.vue";
 
 import footerComponent from "@/components/footer/footerComponent.vue";
 
-import {
-    formationInfoData,
-    productsData,
-    agendaData,
-    incomeProfileData,
-    methodologiesData,
-} from "@/assets/js/info";
+import { goto } from "@/assets/js/buttons";
 
+import { formationInfoData, agendaData } from "@/assets/js/info";
 </script>
 
 <template>
     <header>
         <headerComponent />
     </header>
-
-    <div class="header-info">
-        <p class="title">DESARROLLO DE VIDEOJUEGOS Y ENTORNOS INTERACTIVOS</p>
-        <div class="subtitle">
-            <p>Nivel de formación: Tecnólogo</p>
-        </div>
-    </div>
-
-    <div id="page-nav">
-        <navbuttonsComponent />
-    </div>
 
     <main>
         <bannerComponent />
@@ -52,27 +32,9 @@ import {
                     referrerpolicy="strict-origin-when-cross-origin"
                 ></iframe>
             </div>
-            <div class="info-text">
-                <p id="info">
-                    En este programa se aprenderá a desarrollar videojuegos y
-                    entornos interactivos, partiendo desde cero, pasando por las
-                    fases de preproducción, producción y posproducción.
-                    Comenzando por la historia y tipos de videojuegos, para
-                    poder desarrollar la idea base, elaborar el guion narrativo,
-                    guion técnico, storyboard y definir las mecánicas y niveles
-                    del juego
-                </p>
 
-                <tableComponent :data="formationInfoData" />
-            </div>
+            <tableComponent :data="formationInfoData" />
         </div>
-
-        <section id="justification">
-            <div class="topic">
-                <h1>justificación del programa</h1>
-            </div>
-            <justificationComponent />
-        </section>
 
         <section id="agenda">
             <div class="topic">
@@ -81,77 +43,61 @@ import {
             <detailsComponent :data="agendaData" />
         </section>
 
-        <section id="profiles">
+        <section id="instructor">
             <div class="topic">
-                <h1>Perfiles</h1>
+                <h1>Acerca del instructor</h1>
             </div>
-            <div class="profiles-container">
-                <div id="income-profile">
-                    <h1>Perfil de ingreso</h1>
-                    <tableComponent :data="incomeProfileData" />
+            <div class="info">
+                <div class="photo">
+                    <img src="../assets/images/alvamajo.jpg" alt="instructor" />
                 </div>
-                <div id="graduation-profile">
-                    <h1>Perfil de egreso</h1>
+                <div>
+                    <h3>Alva Majo</h3>
                     <p>
-                        El tecnólogo en desarrollo de videojuegos y entornos
-                        interactivos está capacitado para generar el código que
-                        definirá el comportamiento de cada elemento del
-                        videojuego (personajes, objetos, interfaces gráficas de
-                        usuario etc.) y la interacción del videojuego con el
-                        jugador. También comprende de manera clara las fases de
-                        su diseño y todos sus componentes, como la experiencia
-                        de usuario, la usabilidad, la narrativa, etc. Incorpora
-                        los recursos audiovisuales, que le brindarán un orden
-                        lógico al proceso de producción, asegurando de manera
-                        efectiva el proyecto en toda su extensión. Igualmente
-                        está en capacidad de realizar pruebas para que los
-                        productos cumplan con todos los estándares y necesidades
-                        del mercado, promoviendo el trabajo en equipo y el
-                        respeto en el ámbito laboral y profesional.
+                        Hola, soy <span>Alva Majo</span> desarrollador de
+                        videojuegos indie y videocreador español.
                     </p>
-                    <h1>Principales productos del trabajo del egresado</h1>
-                    <ul>
-                        <li v-for="product in productsData">{{ product }}</li>
-                    </ul>
+                    <p>
+                        Desarrollo y dirijo videojuegos en mi estudio
+                        Majorariatto, que cofundé. También tengo un canal de
+                        YouTube y hago streams semanales en Twitch. Nací en
+                        España y vivo en Mallorca. Mi pasión por los videojuegos
+                        empezó cuando jugué a Super Mario Bros. a los 5 años. En
+                        mi adolescencia usé RPG Maker y aprendí programación con
+                        Visual Basic en el instituto. Aunque empecé la carrera
+                        de Informática, la dejé y opté por títulos técnicos en
+                        audiovisuales y programación.
+                    </p>
+                    <p>
+                        Junto a un amigo, inicié el desarrollo de un videojuego
+                        ambicioso llamado Nosgoroth bajo el nombre de
+                        Majorariatto. Después trabajé un tiempo probando páginas
+                        web y automatizando pruebas, pero renuncié para
+                        dedicarme por completo a los videojuegos. En 2015 creé
+                        Majotori casi en solitario, lo que me permitió seguir
+                        desarrollando juegos. En 2018, lancé mi canal de YouTube
+                        para promocionar Pureya y Golfing Over It con Alva Majo,
+                        y el canal creció bastante, convirtiéndome en una figura
+                        conocida en el mundo de los videojuegos.
+                    </p>
+                    <p>
+                        Disfruto con mi trabajo creativo y busco hacer
+                        videojuegos que tengan un impacto. Un dato curioso:
+                        desarrollé aracnofobia jugando al videojuego
+                        Arachnophobia.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <section id="methodology">
-            <div class="topic">
-                <h1>Estrategia metodológica</h1>
-            </div>
-            <p>
-                Centrada en la construcción de autonomía para garantizar la
-                calidad de la formación en el marco de la formación por
-                competencias, el aprendizaje por proyectos y el uso de técnicas
-                didácticas activas que estimulan el pensamiento para la
-                resolución de problemas simulados y reales; soportadas en el
-                utilización de las tecnologías de la información y la
-                comunicación, integradas, en ambientes virtuales de aprendizaje,
-                que en todo caso recrean el contexto productivo y vinculan al
-                aprendiz con la realidad cotidiana y el desarrollo de las
-                competencias. Igualmente, debe estimular de manera permanente la
-                autocrítica y la reflexión del aprendiz sobre el quehacer y los
-                resultados de aprendizaje que logra a través de la vinculación
-                activa de las cuatro fuentes de información para la construcción
-                de conocimiento
-            </p>
-            <ul>
-                <li v-for="methodology in methodologiesData">
-                    {{ methodology }}
-                </li>
-            </ul>
-        </section>
+        <div class="buttons">
+            <button type="button" v-on:click="goto.inscription">
+                ¡Inscribete aqui!
+            </button>
+        </div>
     </main>
 
     <footer>
-        <div id="inscription">
-            <div id="form">
-                <formComponent />
-            </div>
-        </div>
-
         <footerComponent />
     </footer>
 </template>

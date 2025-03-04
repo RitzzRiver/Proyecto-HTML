@@ -1,15 +1,16 @@
 <?php
+include("data.php");
 
 header("Access-Control-Allow-Origin: http://localhost:5173");
 header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Content-Type");
 
-$server = "localhost";
-$user = "API";
-$pass = "W9lMh-hTF2-eqRHh";
-$db = "api_proj_sena";
-
-$connection = mysqli_connect($server, $user, $pass, $db);
+$connection = mysqli_connect(
+    $dbData["server"],
+    $dbData["user"],
+    $dbData["password"],
+    $dbData["db"]
+);
 
 if (!$connection) {
     http_response_code(500);
@@ -17,8 +18,7 @@ if (!$connection) {
     exit;
 }
 
-$sql = "SELECT * FROM inscriptions";
-$result = mysqli_query($connection, $sql);
+$result = mysqli_query($connection, "SELECT * FROM inscriptions");
 
 $data = [];
 

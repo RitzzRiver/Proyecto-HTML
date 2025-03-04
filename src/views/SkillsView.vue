@@ -5,9 +5,6 @@ import { skillsData } from "@/assets/js/info";
 import footerComponent from "@/components/footer/footerComponent.vue";
 </script>
 <template>
-    <header>
-        <headerComponent />
-    </header>
     <main>
         <div class="skills">
             <div class="topic">

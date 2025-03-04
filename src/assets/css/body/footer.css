@@ -1,0 +1,62 @@
+footer {
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+    .governance {
+        .gov-links-container {
+            background-color: var(--blue3);
+            display: grid;
+            gap: 6px;
+            padding: 48px 27.2px;
+            grid-template-columns: repeat(7, 1fr);
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                font-size: 16px;
+
+                a {
+                    text-decoration: none;
+                }
+
+                :visited {
+                    color: var(--peach3);
+                }
+
+                :not(:visited) {
+                    color: var(--peach3);
+                }
+
+                :hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .more-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        color: var(--blue3);
+        padding: 48px 27.2px;
+        font-size: 12px;
+
+        a {
+            color: var(--blue3);
+        }
+
+        :visited {
+            color: var(--blue3);
+        }
+
+        :not(:visited) {
+            color: var(--blue3);
+        }
+
+        img {
+            width: 338.27px;
+            height: 125px;
+        }
+    }
+}
